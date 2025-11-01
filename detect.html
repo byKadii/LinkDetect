@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detect malicious URLs instantly with SecureLink's advanced threat detection system. Scan any link for security threats before clicking." />
+  <meta name="keywords" content="URL scanner, threat detection, malicious link checker, cybersecurity tool" />
+  <meta name="author" content="SecureLink Team" />
+  <title>SecureLink | URL Threat Detection</title>
+  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/></svg>" />
+</head>
+<body>
+  <!-- Main Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="SecureLink Home">
+      <div class="logo-icon" aria-hidden="true">
+        <div class="logo-network">
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+        </div>
+      </div>
+      <span>SecureLink</span>
+    </a>
+    
+    <ul class="nav-menu" role="menubar">
+      <li class="nav-menu__item" role="none">
+        <a href="index.html" class="nav-menu__link" role="menuitem">Home</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="detect.html" class="nav-menu__link nav-menu__link--active" role="menuitem" aria-current="page">Detect</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="download.html" class="nav-menu__link" role="menuitem">Download</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="about.html" class="nav-menu__link" role="menuitem">About Us</a>
+      </li>
+    </ul>
+    
+    <div class="nav-actions">
+      <button 
+        class="btn--dark-mode dark-mode-toggle" 
+        onclick="toggleDarkMode()" 
+        aria-label="Toggle dark mode" 
+        title="Toggle Dark Mode"
+        type="button"
+      >
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button 
+        class="btn--login login-btn" 
+        onclick="window.location.href='login.html'"
+        type="button"
+      >
+        Log in
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="detect-content" role="main">
+    <header class="detect-header">
+      <h1>Detect Malicious URLs</h1>
+      <p class="detect-description">
+        Enter a link to check if it's safe. Our system will instantly analyze
+        and detect any potential threats.
+      </p>
+    </header>
+
+    <section class="detect-form" aria-labelledby="detect-heading">
+      <h2 id="detect-heading" class="sr-only">URL Detection Form</h2>
+      
+      <form class="form-container" role="form" aria-label="URL detection form">
+        <div class="input-box">
+          <label for="urlInput" class="sr-only">Enter URL to analyze</label>
+          <input 
+            type="url" 
+            id="urlInput" 
+            name="urlInput"
+            placeholder="https://example.com" 
+            required 
+            aria-describedby="url-help"
+            autocomplete="url"
+          />
+          <button 
+            class="btn--primary primary-btn" 
+            onclick="detectUrl()" 
+            type="button"
+            aria-describedby="detect-help"
+          >
+            Detect
+          </button>
+        </div>
+        <div id="url-help" class="sr-only">Enter a complete URL including http:// or https://</div>
+        <div id="detect-help" class="sr-only">Click to analyze the URL for security threats</div>
+      </form>
+
+      <!-- Progress Bar -->
+      <div 
+        id="progressContainer" 
+        class="progress-container" 
+        style="display: none;"
+        role="progressbar" 
+        aria-label="Analysis progress"
+        aria-valuenow="0" 
+        aria-valuemin="0" 
+        aria-valuemax="100"
+      >
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">Analyzing URL...</div>
+      </div>
+      
+      <!-- Analysis Results -->
+      <section 
+        id="result" 
+        class="result-box" 
+        style="display: none;"
+        role="region" 
+        aria-labelledby="result-heading"
+        aria-live="polite"
+      >
+        <h3 id="result-heading" class="sr-only">Analysis Results</h3>
+        <div class="result-content">
+          <span id="resultIcon" aria-hidden="true"></span>
+          <span id="resultText"></span>
+        </div>
+        
+        <div class="result-details" id="resultDetails" style="display: none;" role="group" aria-label="Analysis details">
+          <div class="detail-item">
+            <span class="detail-label">Threat Level:</span>
+            <span class="detail-value" id="threatLevel" aria-label="Threat level">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Threat Type:</span>
+            <span class="detail-value" id="threatType" aria-label="Threat type">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Analysis Time:</span>
+            <span class="detail-value" id="analysisTime" aria-label="Analysis duration">-</span>
+          </div>
+        </div>
+        
+        <div class="result-actions" id="resultActions" style="display: none;" role="group" aria-label="Result actions">
+          <button 
+            class="btn--action action-btn share-btn" 
+            onclick="shareResult()"
+            type="button"
+            aria-label="Share analysis result"
+          >
+            📤 Share Result
+          </button>
+          <button 
+            class="btn--action action-btn history-btn" 
+            onclick="showHistory()"
+            type="button"
+            aria-label="View analysis history"
+          >
+            📜 View History
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- URL History Modal -->
+    <div 
+      id="historyModal" 
+      class="modal" 
+      style="display: none;"
+      role="dialog" 
+      aria-labelledby="history-heading" 
+      aria-modal="true"
+    >
+      <div class="modal-content">
+        <header class="modal-header">
+          <h3 id="history-heading">URL Analysis History</h3>
+          <button 
+            class="close-btn" 
+            onclick="closeHistory()"
+            type="button"
+            aria-label="Close history modal"
+          >
+            &times;
+          </button>
+        </header>
+        <div class="modal-body">
+          <div id="historyList" class="history-list" role="list" aria-label="Analysis history"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 SecureLink. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

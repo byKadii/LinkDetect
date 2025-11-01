@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Log in to your SecureLink account to access advanced URL threat detection features and manage your security settings." />
+  <meta name="keywords" content="SecureLink login, account access, user authentication, security dashboard" />
+  <meta name="author" content="SecureLink Team" />
+  <title>SecureLink | User Login</title>
+  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/></svg>" />
+</head>
+<body>
+  <!-- Main Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="SecureLink Home">
+      <div class="logo-icon" aria-hidden="true">
+        <div class="logo-network">
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+        </div>
+      </div>
+      <span>SecureLink</span>
+    </a>
+    
+    <ul class="nav-menu" role="menubar">
+      <li class="nav-menu__item" role="none">
+        <a href="index.html" class="nav-menu__link" role="menuitem">Home</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="detect.html" class="nav-menu__link" role="menuitem">Detect</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="download.html" class="nav-menu__link" role="menuitem">Download</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="about.html" class="nav-menu__link" role="menuitem">About Us</a>
+      </li>
+    </ul>
+    
+    <div class="nav-actions">
+      <button 
+        class="btn--dark-mode dark-mode-toggle" 
+        onclick="toggleDarkMode()" 
+        aria-label="Toggle dark mode" 
+        title="Toggle Dark Mode"
+        type="button"
+      >
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button class="btn--login login-btn active" aria-current="page">Log in</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="login" role="main">
+    <header class="login-header">
+      <h1>Log in to your account</h1>
+    </header>
+
+    <form class="input-box" onsubmit="handleLogin(event)" role="form" aria-label="Login form">
+      <div class="form-group">
+        <label for="username" class="sr-only">Username</label>
+        <input 
+          type="text" 
+          id="username"
+          name="username"
+          placeholder="Username" 
+          required 
+          autocomplete="username"
+          aria-describedby="username-help"
+        />
+        <div id="username-help" class="sr-only">Enter your username</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="password" class="sr-only">Password</label>
+        <input 
+          type="password" 
+          id="password"
+          name="password"
+          placeholder="Password" 
+          required 
+          autocomplete="current-password"
+          aria-describedby="password-help"
+        />
+        <div id="password-help" class="sr-only">Enter your password</div>
+      </div>
+      
+      <button type="submit" class="btn--primary primary-btn">Log in</button>
+    </form>
+
+    <p class="small-text">
+      Don't have an account? <a href="signup.html">Sign up</a>
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 SecureLink. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

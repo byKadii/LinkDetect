@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SecureLink - Advanced URL threat detection and malicious website protection. Scan any link instantly to detect threats before you click." />
+  <meta name="keywords" content="URL security, threat detection, malicious websites, cybersecurity, link scanner" />
+  <meta name="author" content="SecureLink Team" />
+  <title>SecureLink | Advanced URL Threat Detection</title>
+  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/></svg>" />
+</head>
+<body>
+  <!-- Main Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="SecureLink Home">
+      <div class="logo-icon" aria-hidden="true">
+        <div class="logo-network">
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+        </div>
+      </div>
+      <span>SecureLink</span>
+    </a>
+    
+    <ul class="nav-menu" role="menubar">
+      <li class="nav-menu__item" role="none">
+        <a href="index.html" class="nav-menu__link nav-menu__link--active" role="menuitem" aria-current="page">Home</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="detect.html" class="nav-menu__link" role="menuitem">Detect</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="download.html" class="nav-menu__link" role="menuitem">Download</a>
+      </li>
+      <li class="nav-menu__item" role="none">
+        <a href="about.html" class="nav-menu__link" role="menuitem">About Us</a>
+      </li>
+    </ul>
+    
+    <div class="nav-actions">
+      <button 
+        class="btn--dark-mode dark-mode-toggle" 
+        onclick="toggleDarkMode()" 
+        aria-label="Toggle dark mode" 
+        title="Toggle Dark Mode"
+        type="button"
+      >
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button 
+        class="btn--login login-btn" 
+        onclick="window.location.href='login.html'"
+        type="button"
+      >
+        Log in
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="hero" role="main">
+    <header class="hero-header">
+      <h1>Protect Yourself from Malicious Websites</h1>
+      <p class="hero-description">Scan any link instantly to detect threats before you click</p>
+    </header>
+    
+    <div class="btn-group" role="group" aria-label="Primary actions">
+      <button 
+        class="btn--primary primary-btn" 
+        onclick="window.location.href='detect.html'"
+        type="button"
+      >
+        Start Detection
+      </button>
+      <button 
+        class="btn--secondary secondary-btn" 
+        onclick="window.location.href='download.html'"
+        type="button"
+      >
+        Download Extension
+      </button>
+    </div>
+  </main>
+
+  <!-- Features Section -->
+  <section class="features section" aria-labelledby="features-heading">
+    <div class="container">
+      <h2 id="features-heading">Why Choose SecureLink?</h2>
+      <div class="features-grid" role="list" aria-label="Key features">
+        <article class="feature-card" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🛡️</div>
+          <h3>Real-time Protection</h3>
+          <p>Instant URL analysis with 98% accuracy using advanced machine learning algorithms</p>
+        </article>
+        <article class="feature-card" role="listitem">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
+          <h3>Lightning Fast</h3>
+          <p>Get results in under 2 seconds with our optimized detection engine</p>
+        </article>
+        <article class="feature-card" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🔒</div>
+          <h3>Privacy First</h3>
+          <p>Your data stays secure and private. We never store or share your browsing history</p>
+        </article>
+        <article class="feature-card" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🌐</div>
+          <h3>Global Database</h3>
+          <p>Access to millions of known malicious URLs updated in real-time</p>
+        </article>
+        <article class="feature-card" role="listitem">
+          <div class="feature-icon" aria-hidden="true">🤖</div>
+          <h3>AI-Powered</h3>
+          <p>Advanced artificial intelligence detects new threats before they're widely known</p>
+        </article>
+        <article class="feature-card" role="listitem">
+          <div class="feature-icon" aria-hidden="true">📱</div>
+          <h3>Cross-Platform</h3>
+          <p>Works seamlessly across all devices and browsers with our universal extension</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats section" aria-labelledby="stats-heading">
+    <div class="container">
+      <h2 id="stats-heading" class="sr-only">Platform Statistics</h2>
+      <div class="stats-grid" role="list" aria-label="Platform statistics">
+        <div class="stat-item" role="listitem">
+          <div class="stat-number" id="urlsAnalyzed" aria-label="URLs analyzed count">0</div>
+          <div class="stat-label">URLs Analyzed</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-number" aria-label="Accuracy rate">98%</div>
+          <div class="stat-label">Accuracy Rate</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-number" aria-label="Average response time">1.2s</div>
+          <div class="stat-label">Average Response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 SecureLink. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

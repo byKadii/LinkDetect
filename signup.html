@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a new SecureLink account to access advanced URL threat detection features and personalized security settings." />
+  <meta name="keywords" content="SecureLink signup, create account, user registration, security dashboard" />
+  <meta name="author" content="SecureLink Team" />
+  <title>SecureLink | Create Account</title>
+  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/></svg>" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <div class="logo-network">
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+          <div class="node"></div>
+        </div>
+      </div>
+      <span>SecureLink</span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="detect.html">Detect</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+        <svg class="moon-icon" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button class="login-btn" onclick="window.location.href='login.html'">Log in</button>
+    </div>
+  </nav>
+
+  <main class="login">
+    <h1>Create a new account</h1>
+
+    <form class="input-box" onsubmit="handleSignup(event)">
+      <input type="text" placeholder="Username" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit" class="primary-btn">Sign Up</button>
+    </form>
+
+    <p class="small-text">
+      Already have an account? <a href="login.html">Log in</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SecureLink. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
