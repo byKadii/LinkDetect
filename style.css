@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SecureLink Application Styles
  * Modern, responsive design with clean code principles
  * 
@@ -600,7 +600,7 @@ body.dark-mode .btn--dark-mode .sun-icon {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 80px - 60px);
+  min-height: auto;
   padding: var(--spacing-3xl) var(--spacing-xl);
   text-align: center;
   margin: var(--spacing-xl);
@@ -1597,7 +1597,7 @@ nav ul li a {
 
 /* Footer */
 footer {
-  margin-top: var(--spacing-3xl);
+  margin-top: auto;
   text-align: center;
   color: var(--text-secondary);
   font-size: var(--font-size-base);
@@ -1754,17 +1754,18 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: calc(100vh - 80px - 60px);
+  min-height: auto;
   padding: var(--spacing-3xl) var(--spacing-xl);
   text-align: center;
-  margin: var(--spacing-xl);
+  margin: var(--spacing-xl) auto;
   background: var(--bg-primary);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl);
   animation: fade-in-up 0.8s ease-out;
-  max-width: calc(100% - 40px);
+  width: 100%;
+  max-width: 1200px;
   font-size: var(--font-size-base);
 }
 
@@ -1784,6 +1785,13 @@ footer {
   text-align: left;
   max-width: 900px;
   margin: 0 auto;
+}
+
+/* Ensure section headings inside about content are left-aligned for readability */
+.about-content h2,
+.about-content h3,
+.about-content h4 {
+  text-align: left;
 }
 
 .about-content p {
